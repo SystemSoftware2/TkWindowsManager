@@ -1,4 +1,5 @@
 import tkinter as tk
+import os
 from .window import Window
 
 
@@ -19,8 +20,9 @@ class WindowManager:
         self.root.attributes("-fullscreen", True)
         self.windows = []
 
-        self.root.iconbitmap("./assets/icon.ico")
-        self.root.config(cursor="@./assets/cursor_a.cur")
+        if os.name == "nt":
+            self.root.iconbitmap("./assets/icon.ico")
+            self.root.config(cursor="@./assets/cursor_a.cur")
 
         self.main_frame = tk.Frame(self.root, bg="#29A97E")
         self.main_frame.pack(fill="both", expand=True)
