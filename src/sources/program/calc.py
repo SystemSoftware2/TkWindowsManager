@@ -1,4 +1,5 @@
 import tkinter as tk
+from .. import *
 
 
 class Calculator(tk.Frame):
@@ -51,3 +52,7 @@ class Calculator(tk.Frame):
         else:
             self.expression += str(char)
             self.display.insert(tk.END, char)
+
+def run(app):
+    app.create_window(title="Calculator", content=Calculator,
+                      size=(50, 200, 500, 300), flags=WindowFlags.WN_RESIZABLE)
