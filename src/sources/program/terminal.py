@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import scrolledtext
+from .. import *
 
 class Terminal(tk.Frame):
 
@@ -23,3 +24,7 @@ class Terminal(tk.Frame):
     def execute_command(self, event):
         command = self.text_area.get("insert linestart", "insert lineend")
         self.text_area.insert(tk.END, f"\nExecuted: {exec(command)}\n")
+
+def run(app):
+    app.create_window(title="Terminal", content=Terminal,
+                      size=(275, 50, 500, 300), flags=WindowFlags.WN_CONTROLS)
