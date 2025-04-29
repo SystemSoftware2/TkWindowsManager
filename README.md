@@ -46,22 +46,10 @@ class Test(tk.Frame):
         self.text_area = tk.Text(
             self, wrap=tk.WORD, width=40, height=10, font=("Fixedsys", 12))
         self.text_area.pack(fill="both", expand=True)
-```
 
-Then in `main.py` import your program and add something like
-
-```
-import tkinter as tk
-...
-from sources.program.test import Test
-
-
-def main():
-...
+def run(app):
     app.create_window(title="Test", content=Test,
-                      size=(50, 200, 500, 300), flags=WindowFlags.WN_RESIZABLE)
-
-...
+                      size=(800, 50, 200, 300), flags=WindowFlags.WN_DRAGABLE)
 ```
 
 There are:
